@@ -1,0 +1,56 @@
+*{
+  box-sizing: border-box;
+  color:#543941;
+}
+
+body{
+  font-family: Helvetica, Verdana, Arial, sans-serif;
+}
+
+h1, 
+h2, 
+h3,
+h4{
+  text-align: center;
+}
+
+.add-section{
+  background: #C8DBE0;
+  border: solid 1px #A1B1C3;
+  border-radius: 4px;
+  padding: 20px;
+  margin: auto;
+  width: 70%;
+}
+
+.add-section input[type=text]{
+  border: solid 1px #A1B1C3;
+  background: #FFFFFF;
+  padding: 10px 20px;
+  text-align: left;
+  width: 70%;
+}
+
+.add-section input[type=submit],
+.add-section button{
+  border: none;
+  background: #543941;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+.add-section #array-spotlight {
+  background: white;
+  margin: 30px; 
+  font-size: 30px;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.nuevoDiv {
+  width: 80%;
+  background-color: white;
+}
