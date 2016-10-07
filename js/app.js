@@ -8,6 +8,7 @@
     var botonOrdenar = document.getElementById("orden");
     var botonEliminar = document.getElementById("delete");
     var array = [];
+    var creado = false;
     
     function cargaPagina() {
         botonAgregar.addEventListener("click", agregarArreglo);
@@ -23,10 +24,17 @@
     }
     
     function imprimir(){
-        var nuevoArray = document.createElement("div");
-        contenedor.insertBefore(nuevoArray, contenedor.children[2])
+        var nuevoArray;
+        if (!creado) {
+            nuevoArray = document.createElement("div");
+            contenedor.insertBefore(nuevoArray, contenedor.children[2])
+            nuevoArray.setAttribute("id", "array-spotlight");
+            creado = true;
+        } else {
+            nuevoArray = document.getElementById("array-spotlight");
+        }
         nuevoArray.textContent = array.join(", ");
-        nuevoArray.setAttribute("id", "array-spotlight");
+        console.log(array);
     }
     
     function ordenarArreglo(e){
@@ -39,10 +47,12 @@
     
     function eliminarElementoArray(e){
         e.preventDefault();
-        var i = parseFloat(indiceArray.value)
-        delete array[i];
-        imprimir(); 
-        indiceArray.value = "";
+        var index = parseFloat(indiceArray.value)
+        if(index >= 0){
+            array.splice(index, 1);
+            imprimir(); 
+            indiceArray.value = "";
+        }
     }
     
 })();
